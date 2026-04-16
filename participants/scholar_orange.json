@@ -1,0 +1,121 @@
+{
+  "id": "scholar_002",
+  "name": "Jara Banana-Seed",
+  "email": "jara.bananaseed@example.com",
+  "linkedin": "linkedin.com/in/jara-banana-seed",
+  "lifecycle_state": "Path Assigned",
+  "path": "Orange",
+  "entered_state_at": "2026-04-05T13:46:00",
+  "last_interaction_at": "2026-04-10T09:00:00",
+  "application": {
+    "first_gen": true,
+    "current_status": "Career Transitioner",
+    "occupation_profile": "Design: UX Designer, UI Designer, Product Designer",
+    "industries_of_interest": [
+      "Media: Publishing, Broadcasting, Film, Music, Gaming",
+      "Entertainment: TV, Concerts, Theme Parks"
+    ],
+    "years_experience": "1-2 Years",
+    "education": "Masters: MS, M.Ed",
+    "mentorship_areas": [
+      "Career Path Exploration and Planning",
+      "Public Speaking & Communication",
+      "Career Transition & Pivot Guidance",
+      "Job Search Assistance",
+      "Personal Branding",
+      "Confidence Building & Imposter Syndrome",
+      "Technical Skill Development"
+    ],
+    "preferred_mentor_experience": "3-8 Years",
+    "availability": "Weekdays",
+    "availability_time": [
+      "Morning",
+      "Afternoon",
+      "Evening"
+    ],
+    "preferred_style": [
+      "1:1",
+      "1:3",
+      "1:4",
+      "1:5"
+    ],
+    "session_duration": "60 Minutes",
+    "commitment": "3-Month Commitment",
+    "cadence": "Bi-Weekly",
+    "communication_style": "Unsure, this would be my first Mentor Experience",
+    "goals": {
+      "mobility": "Skill Development, Networking Opportunities, Job Search Assistance",
+      "novelty": "Learning from Failure",
+      "experience": "Real-World Guidance, Shadowing and Observation",
+      "exposure": "Networking Opportunities"
+    },
+    "why_mmc": "There are so few spaces that aim to provide opportunities and resources specifically for first-gen professionals. Excited to gain insight and practical strategies to advance my career.",
+    "previous_mentoring": "None - first mentor experience",
+    "expectations": "To learn, grow, and eventually give back as a mentor. Gain a network and community.",
+    "hobbies": [
+      "Singing",
+      "Writing: fiction, poetry, journaling",
+      "Reading",
+      "Yoga or Pilates",
+      "Documentary Watching",
+      "Studying History or Current Events",
+      "Volunteering or Activism"
+    ],
+    "additional_context": "Politically active in community. Hopes to meet others who share similar values.",
+    "career_vision": "Working with teams dedicated to making social impact. Collaborating with empathetic, thoughtful people oriented towards democratic ways of working.",
+    "excited_about": "Merging culture, social impact, Service Design and UX Research.",
+    "critical_skills": "Data analysis, connecting with participants, compelling storytelling.",
+    "anticipated_challenges": "Gaining professional experience while pivoting into UX Research. Presenting and taking on new responsibilities.",
+    "success_definition": "Having agency over time, work, and people I engage with.",
+    "career_role_model": "Eniola Abioye \u2014 pivoted from non-traditional background into UX Research.",
+    "ideal_environment": "Anti-racist, culturally competent, empathetic, democratically driven.",
+    "proud_accomplishment": "Build a community of change-makers driving social impact."
+  },
+  "signals": {
+    "progress": {
+      "onboarding_complete": false,
+      "onboarding_percent": 60,
+      "goals_documented": false,
+      "last_artifact_submitted": "2026-04-07T09:00:00"
+    },
+    "engagement": {
+      "meetings_this_month": 0,
+      "last_meeting_at": null,
+      "days_since_last_response": 5,
+      "session_prep_demonstrated": false
+    },
+    "risk": {
+      "score": 0.95,
+      "flags": [
+        "ONBOARDING_INCOMPLETE",
+        "GOALS_NOT_DOCUMENTED",
+        "RESPONSE_GAP",
+        "NO_MEETING_SCHEDULED",
+        "STALLED_IN_ONBOARDING"
+      ],
+      "escalation_required": false
+    }
+  },
+  "milestones": {
+    "first_meeting_completed": false,
+    "reflection_submitted": false,
+    "goals_updated": false,
+    "mentor_signoff": false
+  },
+  "mentor_id": null,
+  "match_activated_at": null,
+  "agent_actions_log": [
+    {
+      "timestamp": "2026-04-15T22:34:44.233231",
+      "action": "ONBOARDING_PROMPT_GENERATED",
+      "detail": "Draft written to outputs/scholar_002_onboarding_prompt_20260415_223444.txt \u2014 awaiting coordinator review"
+    },
+    {
+      "timestamp": "2026-04-15T22:39:24.020407",
+      "action": "ONBOARDING_PROMPT_GENERATED",
+      "detail": "Draft written to outputs/scholar_002_onboarding_prompt_20260415_223924.txt \u2014 awaiting coordinator review"
+    }
+  ],
+  "escalations": [],
+  "cycle_count": 3
+}

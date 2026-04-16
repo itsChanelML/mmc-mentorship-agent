@@ -1,0 +1,113 @@
+{
+  "id": "scholar_001",
+  "name": "Maya Chen",
+  "email": "maya.chen@example.com",
+  "linkedin": "linkedin.com/in/maya-chen",
+  "lifecycle_state": "Active",
+  "path": "Green",
+  "entered_state_at": "2026-04-08T09:00:00",
+  "last_interaction_at": "2026-04-12T14:30:00",
+  "application": {
+    "first_gen": true,
+    "current_status": "Early Career Professional",
+    "occupation_profile": "Technology: Software Engineer, Frontend Developer",
+    "industries_of_interest": [
+      "Technology: Software, Hardware, SaaS",
+      "Social Impact: Nonprofits, Education, Civic Tech"
+    ],
+    "years_experience": "1-2 Years",
+    "education": "Bachelors: BS, BA",
+    "mentorship_areas": [
+      "Career Path Exploration and Planning",
+      "Technical Skill Development",
+      "Job Search Assistance",
+      "Personal Branding & Professional Online Presence",
+      "Confidence Building & Imposter Syndrome",
+      "Public Speaking & Communication"
+    ],
+    "preferred_mentor_experience": "6-8 Years",
+    "availability": "Weekdays",
+    "availability_time": [
+      "Evening",
+      "Morning"
+    ],
+    "preferred_style": [
+      "1:1"
+    ],
+    "session_duration": "60 Minutes",
+    "commitment": "3-Month Commitment",
+    "cadence": "Bi-Weekly",
+    "communication_style": "Direct and structured with clear action items",
+    "goals": {
+      "mobility": "Skill Development, Promotion or Role Advancement",
+      "novelty": "Learning from Failure, Exposure to New Perspectives",
+      "experience": "Real-World Guidance, Industry Insider Knowledge",
+      "exposure": "Networking Opportunities, Speaking Opportunities"
+    },
+    "why_mmc": "I grew up watching my parents work multiple jobs without ever finding a career that fulfilled them. I want something different and I need someone who has walked this path to show me it is possible. MMC feels like the community I never had access to growing up.",
+    "previous_mentoring": "I had an informal mentor in college \u2014 a professor who encouraged me to apply for internships I did not think I was qualified for. That experience changed my trajectory entirely.",
+    "expectations": "I want to build a relationship with someone who will be honest with me about where I need to grow, help me navigate the unwritten rules of the tech industry, and hold me accountable to my goals.",
+    "hobbies": [
+      "Photography",
+      "Hiking",
+      "Reading science fiction",
+      "Cooking",
+      "Attending local tech meetups"
+    ],
+    "additional_context": "I am currently working full time while completing an online certification in cloud computing. Time management is my biggest challenge right now.",
+    "career_vision": "In five years I want to be a senior software engineer at a company whose mission I genuinely believe in \u2014 ideally one using technology to solve education or climate challenges. In ten years I hope to be leading a team and mentoring others the way I hope to be mentored now.",
+    "excited_about": "AI-assisted developer tools and how they are changing what it means to be an early career engineer. Also deeply interested in civic tech and how software can improve government services.",
+    "critical_skills": "System design, technical communication, learning how to scope and estimate work accurately, and becoming more confident presenting my ideas in large group settings.",
+    "anticipated_challenges": "Imposter syndrome is real for me. I often second-guess whether my ideas are worth sharing. I also worry about the gap between my current skills and what senior roles require.",
+    "success_definition": "Success means doing work that matters, being compensated fairly for it, and having enough flexibility to show up fully for the people I love. It is not just a title.",
+    "career_role_model": "Kimberly Bryant, founder of Black Girls CODE. She built something from nothing because the thing she needed did not exist. That resonates deeply with me.",
+    "ideal_environment": "Collaborative, psychologically safe, and mission-driven. I want to work somewhere that celebrates curiosity and does not punish mistakes made in good faith.",
+    "proud_accomplishment": "Ship a product that a first-generation student somewhere uses to get a job they never thought was possible for someone like them."
+  },
+  "signals": {
+    "progress": {
+      "onboarding_complete": true,
+      "onboarding_percent": 100,
+      "goals_documented": true,
+      "last_artifact_submitted": "2026-04-12T14:30:00"
+    },
+    "engagement": {
+      "meetings_this_month": 2,
+      "last_meeting_at": "2026-04-12T14:30:00",
+      "days_since_last_response": 2,
+      "session_prep_demonstrated": true
+    },
+    "risk": {
+      "score": 0,
+      "flags": [],
+      "escalation_required": false
+    }
+  },
+  "milestones": {
+    "first_meeting_completed": true,
+    "reflection_submitted": true,
+    "goals_updated": true,
+    "mentor_signoff": false
+  },
+  "mentor_id": "mentor_042",
+  "match_activated_at": "2026-04-08T10:00:00",
+  "agent_actions_log": [
+    {
+      "timestamp": "2026-04-08T10:00:00",
+      "action": "MATCH_ACTIVATED",
+      "detail": "Matched with mentor_042 \u2014 intro email sent"
+    },
+    {
+      "timestamp": "2026-04-10T09:00:00",
+      "action": "FIRST_MEETING_CONFIRMED",
+      "detail": "First meeting completed within activation window"
+    },
+    {
+      "timestamp": "2026-04-12T14:30:00",
+      "action": "REFLECTION_SUBMITTED",
+      "detail": "Scholar submitted first reflection artifact on time"
+    }
+  ],
+  "escalations": [],
+  "cycle_count": 5
+}

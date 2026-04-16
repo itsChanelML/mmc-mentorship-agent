@@ -1,0 +1,90 @@
+{
+  "id": "scholar_003",
+  "name": "Sofia Torres",
+  "email": "sofia.torres@example.com",
+  "linkedin": "linkedin.com/in/sofia-torres",
+  "lifecycle_state": "Active",
+  "path": "Green",
+  "entered_state_at": "2026-03-28T09:00:00",
+  "last_interaction_at": "2026-04-07T10:00:00",
+  "application": {
+    "first_gen": true,
+    "current_status": "Early Career Professional",
+    "occupation_profile": "Data: Data Analyst, Data Scientist, ML Engineer",
+    "industries_of_interest": [
+      "Technology: Software, Hardware, SaaS",
+      "Healthcare: Hospitals, Biotech, Pharmaceuticals"
+    ],
+    "years_experience": "1-2 Years",
+    "education": "Bachelors: BS, BA",
+    "mentorship_areas": [
+      "Career Path Exploration and Planning",
+      "Technical Skill Development",
+      "Job Search Assistance",
+      "Confidence Building & Imposter Syndrome"
+    ],
+    "commitment": "3-Month Commitment",
+    "cadence": "Bi-Weekly",
+    "why_mmc": "Looking for guidance breaking into data science from a non-traditional background. MMC feels like a community that gets it.",
+    "previous_mentoring": "None",
+    "expectations": "Gain technical skills, build confidence, land first data role.",
+    "career_vision": "Data Scientist at a company solving real healthcare problems.",
+    "anticipated_challenges": "Imposter syndrome, breaking in without a CS degree.",
+    "success_definition": "Using data to make decisions that actually help people."
+  },
+  "signals": {
+    "progress": {
+      "onboarding_complete": true,
+      "goals_documented": true,
+      "last_artifact_submitted": "2026-04-05T10:00:00"
+    },
+    "engagement": {
+      "meetings_this_month": 1,
+      "last_meeting_at": "2026-04-07T10:00:00",
+      "days_since_last_response": 8,
+      "session_prep_demonstrated": false
+    },
+    "risk": {
+      "score": 0.9,
+      "flags": [
+        "ARTIFACT_GAP",
+        "CADENCE_BREACH",
+        "RESPONSE_GAP",
+        "STALLED_PROGRESSION"
+      ],
+      "escalation_required": true
+    }
+  },
+  "milestones": {
+    "first_meeting_completed": true,
+    "reflection_submitted": false,
+    "goals_updated": false,
+    "mentor_signoff": false
+  },
+  "mentor_id": "mentor_017",
+  "match_activated_at": "2026-03-30T10:00:00",
+  "agent_actions_log": [
+    {
+      "timestamp": "2026-04-08T09:00:00",
+      "action": "REMINDER_SENT",
+      "detail": "Automated reminder sent \u2014 no response"
+    },
+    {
+      "timestamp": "2026-04-10T09:00:00",
+      "action": "REMINDER_SENT",
+      "detail": "Second reminder sent \u2014 no response"
+    },
+    {
+      "timestamp": "2026-04-15T22:34:28.658067",
+      "action": "ESCALATION_BRIEF_GENERATED",
+      "detail": "Brief written to escalations/scholar_003_20260415_223428.txt"
+    },
+    {
+      "timestamp": "2026-04-15T22:38:56.956279",
+      "action": "ESCALATION_BRIEF_GENERATED",
+      "detail": "Brief written to escalations/scholar_003_20260415_223856.txt"
+    }
+  ],
+  "escalations": [],
+  "cycle_count": 7
+}
