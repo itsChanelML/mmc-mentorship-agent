@@ -1,0 +1,54 @@
+{
+  "id": "mentor_042",
+  "name": "David Park",
+  "email": "david.park@example.com",
+  "linkedin": "linkedin.com/in/david-park",
+  "status": "Active",
+  "application": {
+    "occupation_profile": "Technology: Software Engineer, Engineering Manager",
+    "industry_profile": [
+      "Technology: Software, Hardware, SaaS",
+      "Social Impact: Nonprofits, Education, Civic Tech"
+    ],
+    "years_experience": "8-10 Years",
+    "education": "Bachelors: BS, BA",
+    "areas_of_expertise": [
+      "Career Path Exploration and Planning",
+      "Technical Skill Development",
+      "Public Speaking & Communication",
+      "Personal Branding & Professional Online Presence",
+      "Confidence Building & Imposter Syndrome"
+    ],
+    "preferred_mentee_profile": [
+      "Early Career Professional",
+      "Career Transitioner"
+    ],
+    "availability": "Weekdays",
+    "availability_time": ["Evening"],
+    "preferred_style": ["1:1"],
+    "session_duration": "60 Minutes",
+    "commitment": "3-Month Commitment",
+    "cadence": "Bi-Weekly",
+    "communication_style": "Direct with clear action items and structured follow-up",
+    "how_i_support": {
+      "mobility": "Career coaching, resume review, interview prep",
+      "novelty": "Sharing failures as learning opportunities",
+      "experience": "Real-world engineering career guidance",
+      "exposure": "Introductions to my network in civic tech and SaaS"
+    },
+    "why_mentor": "I was a first-generation college student who had no idea how the tech industry actually worked. I spent three years making avoidable mistakes that a good mentor could have helped me skip. I mentor now because I want to be the person I needed at 22.",
+    "previous_experience": "Mentored 6 engineers over the past 3 years informally through my company's internal program.",
+    "expectations": "A mentee who shows up prepared, follows through on commitments, and is honest about where they are struggling.",
+    "hobbies": [
+      "Rock climbing",
+      "Reading biography and history",
+      "Cooking Korean food",
+      "Open source contributions"
+    ],
+    "additional_context": "I am a first-generation Korean-American. I understand the specific pressures that come with being the first in your family to navigate corporate America."
+  },
+  "current_mentees": ["scholar_001"],
+  "past_mentees": [],
+  "availability_slots": 1,
+  "match_history": []
+}

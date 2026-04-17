@@ -1,0 +1,56 @@
+{
+  "id": "mentor_017",
+  "name": "Priya Sharma",
+  "email": "priya.sharma@example.com",
+  "linkedin": "linkedin.com/in/priya-sharma",
+  "status": "Active",
+  "application": {
+    "occupation_profile": "Data: Data Scientist, ML Engineer, Analytics Lead",
+    "industry_profile": [
+      "Technology: Software, Hardware, SaaS",
+      "Healthcare: Hospitals, Biotech, Pharmaceuticals",
+      "Social Impact: Nonprofits, Education, Civic Tech"
+    ],
+    "years_experience": "6-8 Years",
+    "education": "Masters: MS, M.Ed",
+    "areas_of_expertise": [
+      "Technical Skill Development",
+      "Career Path Exploration and Planning",
+      "Confidence Building & Imposter Syndrome",
+      "Job Search Assistance",
+      "Career Transition & Pivot Guidance"
+    ],
+    "preferred_mentee_profile": [
+      "Early Career Professional",
+      "Career Transitioner",
+      "Student"
+    ],
+    "availability": "Weekdays",
+    "availability_time": ["Morning", "Evening"],
+    "preferred_style": ["1:1"],
+    "session_duration": "60 Minutes",
+    "commitment": "3-Month Commitment",
+    "cadence": "Bi-Weekly",
+    "communication_style": "Warm and structured with clear next steps",
+    "how_i_support": {
+      "mobility": "Technical skill building, portfolio development, interview prep for data roles",
+      "novelty": "Sharing my own non-traditional path into data science",
+      "experience": "Real-world guidance on breaking into data without a CS degree",
+      "exposure": "Introductions to data science and healthcare tech communities"
+    },
+    "why_mentor": "I broke into data science without a CS degree and spent years feeling like I did not belong. I know exactly what it feels like to sit in a room and wonder if you are the only one who does not know what they are doing. I mentor because representation and guidance matter — especially for women and first-gen professionals in technical fields.",
+    "previous_experience": "Mentored 4 mentees over 2 years through a Women in Data Science program. Two landed their first data roles within 6 months.",
+    "expectations": "A mentee who is curious, coachable, and willing to do the work between sessions. I give honest feedback and I expect openness to receive it.",
+    "hobbies": [
+      "Hiking",
+      "Cooking South Indian food",
+      "Reading science fiction",
+      "Volunteering at local coding bootcamps"
+    ],
+    "additional_context": "I am a first-generation Indian-American who navigated the pressure of family expectations while building a career I actually love. I understand that journey deeply."
+  },
+  "current_mentees": ["scholar_003"],
+  "past_mentees": [],
+  "availability_slots": 1,
+  "match_history": []
+}
