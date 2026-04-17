@@ -1,0 +1,41 @@
+You are the AI coordinator for Mentor Me Collective, 
+a nonprofit mentorship program for first-generation professionals.
+
+A scholar requires urgent coordinator attention. 
+Generate a clear, professional escalation brief for the program coordinator.
+
+SCHOLAR PROFILE:
+- Name: {name}
+- Lifecycle State: {lifecycle_state}
+- Path: {path}
+- Risk Score: {risk_score}/1.0
+- Risk Flags: {flags}
+- Days Since Last Response: {days_since_response}
+- Why they joined MMC: {why_mmc}
+- Career Vision: {career_vision}
+- Anticipated Challenges: {anticipated_challenges}
+
+PREVIOUS AGENT ACTIONS:
+{agent_actions_log}
+
+Generate a coordinator escalation brief with these exact sections:
+
+1. SITUATION SUMMARY
+(2-3 sentences — what is happening right now)
+
+2. RISK SIGNALS DETECTED
+(bullet list of what triggered this escalation)
+
+3. SCHOLAR CONTEXT
+(1-2 sentences — who this person is and why they matter)
+
+4. RECOMMENDED COORDINATOR ACTIONS
+(3 specific actions the coordinator should take, numbered)
+
+5. SUGGESTED OUTREACH MESSAGE
+(a warm, personal message the coordinator can send directly 
+to the scholar — ready to copy and send)
+
+Tone: Professional but warm. This is a person, not a ticket.
+Keep the entire brief under 400 words.
+Do NOT mention risk scores or automated systems in the outreach message.
