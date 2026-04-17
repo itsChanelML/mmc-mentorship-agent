@@ -8,6 +8,7 @@ import os
 from datetime import datetime
 from openai import OpenAI
 from dotenv import load_dotenv
+from utils import load_prompt, format_list
 
 load_dotenv()
 
@@ -29,39 +30,23 @@ def generate_onboarding_prompt(state):
     )
     flags = state["signals"]["risk"]["flags"]
 
-    prompt = f"""You are a warm, encouraging program coordinator 
-at Mentor Me Collective, a nonprofit mentorship program for 
-first-generation professionals.
-
-A scholar has started but not completed their onboarding. 
-Write a personalized, encouraging message to help them 
-across the finish line.
-
-SCHOLAR PROFILE:
-- Name: {name}
-- Onboarding Complete: {onboarding_percent}%
-- Why they joined MMC: {application.get('why_mmc', 'Not provided')}
-- Career Vision: {application.get('career_vision', 'Not provided')}
-- What they hope to gain: {application.get('expectations', 'Not provided')}
-- Hobbies: {', '.join(application.get('hobbies', []))}
-- Their anticipated challenges: {application.get('anticipated_challenges', 'Not provided')}
-- Mentorship areas they selected: {', '.join(application.get('mentorship_areas', []))}
-
-SITUATION:
-Active flags: {', '.join(flags)}
-
-Write a short, warm outreach message (under 200 words) that:
-1. Addresses them by first name
-2. References something specific from their application 
-   so they know this is personal not automated
-3. Reminds them what's waiting on the other side 
-   of completing onboarding — their mentor match
-4. Gives them one simple, specific next step
-5. Closes with genuine encouragement
-
-Tone: Warm, human, never corporate. 
-Like a message from someone who genuinely wants them to succeed.
-Do NOT mention risk scores or flags."""
+    prompt = load_prompt("onboarding_reminder", {
+        "name": name,
+        "onboarding_percent": onboarding_percent,
+        "missing_sections": format_list(
+            [f.replace("application.", "").replace("_", " ") for f in flags]
+        ),
+        "why_mmc": application.get("why_mmc", "Not provided"),
+        "career_vision": application.get("career_vision", "Not provided"),
+        "expectations": application.get("expectations", "Not provided"),
+        "hobbies": format_list(application.get("hobbies", [])),
+        "anticipated_challenges": application.get(
+            "anticipated_challenges", "Not provided"
+        ),
+        "mentorship_areas": format_list(
+            application.get("mentorship_areas", [])
+        )
+    })
 
     print(f"  Calling Nemotron for onboarding prompt — {name}...")
 
@@ -88,7 +73,6 @@ scholars feel seen and supported."""
 
     if not message:
         print(f"  WARNING: Nemotron returned empty response")
-        print(f"  Full response: {response}")
         message = f"[Nemotron returned empty response — please review scholar {state['name']} manually]"
 
     # Write to outputs folder for coordinator review
@@ -105,7 +89,6 @@ scholars feel seen and supported."""
         f.write("="*50 + "\n\n")
         f.write(message)
 
-    # Update scholar actions log
     state["agent_actions_log"].append({
         "timestamp": datetime.now().isoformat(),
         "action": "ONBOARDING_PROMPT_GENERATED",
@@ -129,31 +112,18 @@ def generate_drift_alert(state):
         "days_since_last_response", 0
     )
 
-    prompt = f"""You are a warm program coordinator at Mentor Me Collective,
-a nonprofit mentorship program for first-generation professionals.
-
-A scholar who was active has gone quiet. Write a genuine, 
-personal re-engagement message.
-
-SCHOLAR PROFILE:
-- Name: {name}
-- Days since last response: {days_silent}
-- Why they joined MMC: {application.get('why_mmc', 'Not provided')}
-- Career Vision: {application.get('career_vision', 'Not provided')}
-- Challenges they anticipated: {application.get('anticipated_challenges', 'Not provided')}
-- Success definition: {application.get('success_definition', 'Not provided')}
-
-Write a re-engagement message (under 150 words) that:
-1. Opens with genuine care — not a reminder
-2. Acknowledges that life gets busy without being condescending
-3. References their career vision specifically so they 
-   feel remembered as a person
-4. Offers a simple, low-pressure next step
-5. Reminds them their mentor is still there for them
-
-Tone: Like a friend who noticed you went quiet 
-and genuinely wants to check in.
-Do NOT mention risk scores, flags, or automated systems."""
+    prompt = load_prompt("drift_alert", {
+        "name": name,
+        "days_since_response": days_silent,
+        "why_mmc": application.get("why_mmc", "Not provided"),
+        "career_vision": application.get("career_vision", "Not provided"),
+        "anticipated_challenges": application.get(
+            "anticipated_challenges", "Not provided"
+        ),
+        "success_definition": application.get(
+            "success_definition", "Not provided"
+        )
+    })
 
     print(f"  Calling Nemotron for drift alert — {name}...")
 

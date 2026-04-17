@@ -33,36 +33,22 @@ def generate_escalation_brief(state):
     application = state.get("application", {})
     actions_log = state.get("agent_actions_log", [])
 
-    prompt = f"""You are the AI coordinator for Mentor Me Collective, 
-a nonprofit mentorship program for first-generation professionals.
+    from utils import load_prompt, format_list, format_log
 
-A scholar requires urgent coordinator attention. 
-Generate a clear, professional escalation brief for the program coordinator.
-
-SCHOLAR PROFILE:
-- Name: {name}
-- Lifecycle State: {lifecycle_state}
-- Path: {path}
-- Risk Score: {risk_score}/1.0
-- Risk Flags: {', '.join(flags)}
-- Days Since Last Response: {days_since_meeting}
-- Why they joined MMC: {application.get('why_mmc', 'Not provided')}
-- Career Vision: {application.get('career_vision', 'Not provided')}
-- Anticipated Challenges: {application.get('anticipated_challenges', 'Not provided')}
-
-PREVIOUS AGENT ACTIONS:
-{json.dumps(actions_log, indent=2)}
-
-Generate a coordinator escalation brief with these exact sections:
-
-1. SITUATION SUMMARY (2-3 sentences — what is happening)
-2. RISK SIGNALS DETECTED (bullet list of what triggered this)
-3. SCHOLAR CONTEXT (1-2 sentences — who this person is and why they matter)
-4. RECOMMENDED COORDINATOR ACTIONS (3 specific actions the coordinator should take)
-5. SUGGESTED OUTREACH MESSAGE (a warm, personal message the coordinator can send directly to the scholar)
-
-Tone: Professional but warm. This is a person, not a ticket.
-Keep the entire brief under 400 words."""
+    prompt = load_prompt("escalation_brief", {
+        "name": name,
+        "lifecycle_state": lifecycle_state,
+        "path": path,
+        "risk_score": risk_score,
+        "flags": format_list(flags),
+        "days_since_response": days_since_meeting,
+        "why_mmc": application.get("why_mmc", "Not provided"),
+        "career_vision": application.get("career_vision", "Not provided"),
+        "anticipated_challenges": application.get(
+            "anticipated_challenges", "Not provided"
+        ),
+        "agent_actions_log": format_log(actions_log)
+    })
 
     print(f"  Calling Nemotron for escalation brief — {name}...")
 
