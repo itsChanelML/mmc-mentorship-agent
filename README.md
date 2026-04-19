@@ -25,29 +25,21 @@ depends entirely on human memory:
 - Which scholars are silently drifting toward dropout?
 - Which mentor is the best match for this applicant?
 
-**When progression depends on human memory, people fall
-through the cracks.**
+**When progression depends on human memory, people fall through the cracks.**
 
-14,000+ qualified applicants are turned away every year —
-not because they aren't ready, but because human-constrained
-capacity can't serve them. This agent replaces reliance on
-human memory with persistent, signal-driven lifecycle management
-running continuously across hours and days.
+14,000+ qualified applicants are turned away every year — not because they aren't ready, but because human-constrained capacity can't serve them. This agent replaces reliance on human memory with persistent, signal-driven lifecycle management running continuously across hours and days.
 
 ---
 
 ## The Architecture
 
-This project implements Kay Zhu's three Long-Horizon Agent
-bottleneck solutions from GTC 2026 (Track S82413):
+This project implements Kay Zhu's three Long-Horizon Agent bottleneck solutions from GTC 2026 (Track S82413):
 
 ### 1. Memory — Context is RAM. Files are your Hard Disk.
 
-Every scholar and mentor has a persistent JSON file on disk.
-The agent reads it at the start of every cycle, acts on it,
-and writes results back immediately. No state lives only in
-context. The agent can crash, restart, and continue exactly
-where it left off.
+Every scholar and mentor has a persistent JSON file on disk. The agent reads it at the start of every cycle, acts on it, and writes results back immediately. No state lives only in context. The agent can crash, restart, and continue exactly where it left off.
+
+```
 participants/
 ├── scholar_green.json    # Maya Chen — Active, on track
 ├── scholar_orange.json   # Jara Banana-Seed — Orange path, onboarding incomplete
@@ -55,23 +47,23 @@ participants/
 mentors/
 ├── mentor_042.json       # David Park — Civic tech, engineering
 └── mentor_017.json       # Priya Sharma — Data science, healthcare
+```
 
 ### 2. Action — Composable Tools, Not Monolithic Prompts
 
-Each coordinator responsibility is a composable tool that does
-one thing and returns structured output. The LLM orchestrates.
-It does not carry all the data.
+Each coordinator responsibility is a composable tool that does one thing and returns structured output. The LLM orchestrates. It does not carry all the data.
+
+```
 tools/
 ├── escalation_writer.py  # Nemotron generates coordinator briefs
 ├── drift_detector.py     # Nemotron generates re-engagement messages
 ├── intake_monitor.py     # Dual-stream mentee + mentor intake monitoring
 └── matching_engine.py    # Intelligent mentor-mentee matching with intro letters
+```
 
 ### 3. Continuity — External Loop with Checkpoint
 
-The agent runs in an external loop. Every cycle:
-read all participant files → detect signals → decide action
-→ execute tool → write state back to disk → checkpoint.
+The agent runs in an external loop. Every cycle: read all participant files → detect signals → decide action → execute tool → write state back to disk → checkpoint.
 
 ```python
 # The continuity solution
@@ -85,6 +77,8 @@ while True:
 ---
 
 ## The Full System
+
+```
 ┌─────────────────────────────────────────────────────────┐
 │                MMC LONG-HORIZON AGENT                   │
 ├─────────────────────────────────────────────────────────┤
@@ -113,6 +107,7 @@ while True:
 │  Intro letters           escalations/ folder            │
 │                                                         │
 └─────────────────────────────────────────────────────────┘
+```
 
 ---
 
@@ -143,8 +138,7 @@ The router maps signal results to agent actions:
 
 ## The Matching Engine
 
-Hard compatibility checks run first — fast, deterministic,
-no AI needed:
+Hard compatibility checks run first — fast, deterministic, no AI needed:
 
 - Availability overlap (days + time slots)
 - Mentoring style compatibility
@@ -152,8 +146,7 @@ no AI needed:
 - Industry overlap
 - Expertise coverage
 
-Then Nemotron performs deep compatibility analysis across
-both full profiles and generates:
+Then Nemotron performs deep compatibility analysis across both full profiles and generates:
 
 - Compatibility score (0–100)
 - Match reasoning with specific profile references
@@ -163,10 +156,7 @@ both full profiles and generates:
 - Personalized introduction letter to the mentee
 - Personalized introduction letter to the mentor
 
-**In a recent run: Jara matched to Priya Sharma at 88/100
-over David Park at 85/100 — Nemotron identified their shared
-experience as first-gen professionals navigating non-traditional
-paths into technical fields as the decisive factor.**
+**In a recent run: Jara matched to Priya Sharma at 88/100 over David Park at 85/100 — Nemotron identified their shared experience as first-gen professionals navigating non-traditional paths into technical fields as the decisive factor.**
 
 ---
 
@@ -175,13 +165,13 @@ paths into technical fields as the decisive factor.**
 Rules detect. Nemotron communicates.
 
 **Escalation Brief** — for scholars showing participation drift:
-
+```
 SITUATION SUMMARY
 RISK SIGNALS DETECTED
 SCHOLAR CONTEXT
 RECOMMENDED COORDINATOR ACTIONS
 SUGGESTED OUTREACH MESSAGE — ready to copy and send
-
+```
 
 **Onboarding Prompt** — for Orange path scholars:
 - References specific details from their application
@@ -200,9 +190,7 @@ SUGGESTED OUTREACH MESSAGE — ready to copy and send
 - Introduction letters for both parties
 - All mentor evaluations logged for transparency
 
-All outputs go to `escalations/` or `outputs/` for coordinator
-review. **No message is ever sent automatically.**
-The agent drafts. The coordinator decides.
+All outputs go to `escalations/` or `outputs/` for coordinator review. **No message is ever sent automatically.** The agent drafts. The coordinator decides.
 
 ---
 
@@ -224,8 +212,7 @@ Based on MMC's End-to-End Experience Summary:
 - Final send decision on all outreach
 - Final match approval
 
-*"The program team guides people.*
-*Engineering guides progression."*
+*"The program team guides people. Engineering guides progression."*
 
 ---
 
@@ -254,28 +241,35 @@ python3 tools/matching_engine.py
 ```
 
 **Expected agent output:**
+```
 MMC LONG-HORIZON MENTORSHIP AGENT
 Powered by Nemotron via NVIDIA NIM
 Genspark Builder Grant — GTC 2026
+
 Resuming from checkpoint — last run: 2026-04-16T21:26:56
+
 ── Processing: Maya Chen ──────────────────────
 Signal Score: 0.0
 Action: NO_ACTION — Scholar on track
+
 ── Processing: Sofia Torres ──────────────────────
 Signal Score: 0.9
 Flags: ARTIFACT_GAP, CADENCE_BREACH, RESPONSE_GAP, STALLED_PROGRESSION
 Action: GENERATE_ESCALATION
 → Escalation brief written to escalations/
+
 ── Processing: Jara Banana-Seed ──────────────────────
 Signal Score: 0.95
 Flags: ONBOARDING_INCOMPLETE, NO_MEETING_SCHEDULED
 Action: SEND_ONBOARDING_PROMPT
 → Personalized prompt written to outputs/
+
 CYCLE 3 COMPLETE
 Scholars processed: 3
 Escalations: 1
 Prompts generated: 1
 No action needed: 1
+```
 
 ---
 
@@ -294,6 +288,8 @@ No action needed: 1
 ---
 
 ## Project Structure
+
+```
 mmc-mentorship-agent/
 ├── agent.py                    # Main orchestrator + external loop
 ├── signals.py                  # Signal monitor — the nervous system
@@ -321,13 +317,13 @@ mmc-mentorship-agent/
 ├── .env.example                # API key template
 ├── .gitignore                  # Protects .env and runtime files
 └── README.md
+```
 
 ---
 
 ## What's Next — V2 on Google Cloud
 
-V1 demonstrates the full Long-Horizon architecture.
-V2 (production on GCP with $25K in credits) adds:
+V1 demonstrates the full Long-Horizon architecture. V2 (production on GCP with $25K in credits) adds:
 
 - Real scholar data with privacy handling
 - Google Meet + Calendar API for live session scheduling
@@ -340,25 +336,20 @@ V2 (production on GCP with $25K in credits) adds:
 
 ## The Story Behind This
 
-I attended Kay Zhu's GTC 2026 session on Long-Horizon Agents
-and recognized every bottleneck he described in my own system.
-I came home and built this.
+I attended Kay Zhu's GTC 2026 session on Long-Horizon Agents and recognized every bottleneck he described in my own system. I came home and built this.
 
-MMC has run mentorship programs for 40,000+ scholars across
-120+ countries for five years. The hardest problem was never
-finding talent. It was maintaining continuity at scale without
-burning out the humans coordinating it.
+MMC has run mentorship programs for 40,000+ scholars across 120+ countries for five years. The hardest problem was never finding talent. It was maintaining continuity at scale without burning out the humans coordinating it.
 
-**The program team guides people.**
-**Engineering guides progression.**
+**The program team guides people.**  
+**Engineering guides progression.**  
 **This agent is the infrastructure answer.**
 
 ---
 
 ## Built By
 
-**Chanel Power**
-Senior ML Engineer · Founder & CEO, Mentor Me Collective
-Genspark Builder Grant Recipient · GTC 2026
-GitHub: [@itsChanelML](https://github.com/itsChanelML)
+**Chanel Power**  
+Senior ML Engineer · Founder & CEO, Mentor Me Collective  
+Genspark Builder Grant Recipient · GTC 2026  
+GitHub: [@itsChanelML](https://github.com/itsChanelML)  
 LinkedIn: [linkedin.com/in/powerc1](https://linkedin.com/in/powerc1)
